@@ -1,5 +1,7 @@
 package il.co.moshavit.model;
 
+import org.joda.time.DateTime;
+
 public class User {
   private int IdUser;
   private String UserName;
