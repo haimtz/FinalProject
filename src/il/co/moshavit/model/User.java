@@ -1,7 +1,10 @@
 package il.co.moshavit.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 import org.joda.time.DateTime;
 
+@XmlRootElement
 public class User {
   private int IdUser;
   private String UserName;
@@ -51,8 +54,8 @@ public class User {
 	public DateTime getRegisterDate() {
 		return RegisterDate;
 	}
-	public void setRegisterDate(DateTime registerDate) {
-		RegisterDate = registerDate;
+	public void setRegisterDate(String registerDate) {
+		this.RegisterDate = DateTime.now();
 	}  
 
 }
