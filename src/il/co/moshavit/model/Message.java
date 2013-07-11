@@ -1,11 +1,13 @@
 package il.co.moshavit.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
 import org.joda.time.DateTime;
 
+@XmlRootElement
 public abstract class Message {
 	
 	private int idUser;
-	private int id;
+	private int idMessage;
 	private String subject;
 	private String content;
 	private DateTime publish;
@@ -17,10 +19,10 @@ public abstract class Message {
 		this.idUser = idUser;
 	}
 	public int getId() {
-		return id;
+		return idMessage;
 	}
 	public void setId(int id) {
-		this.id = id;
+		this.idMessage = id;
 	}
 	public String getSubject() {
 		return subject;
@@ -34,6 +36,9 @@ public abstract class Message {
 	public void setContent(String content) {
 		this.content = content;
 	}
+	
+	//TODO set the format of dd/MM/yyyy  
+	//TODO setters and getter will work with string only
 	public DateTime getPublish() {
 		return publish;
 	}
