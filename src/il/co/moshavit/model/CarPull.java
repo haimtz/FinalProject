@@ -1,7 +1,9 @@
 package il.co.moshavit.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
 import org.joda.time.DateTime;
 
+@XmlRootElement
 public class CarPull extends Message {
 	
 	private String form;

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mySqldata>
+	<dataSetting>
+		<url>
+			localhost:3306
+		</url>
+		<username>
+			root
+		</username>
+		<password>
+			1234
+		</password>
+		<dbName>
+			moshavit_DB
+		</dbName>
+	</dataSetting>
+</mySqldata>
