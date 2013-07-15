@@ -15,6 +15,17 @@ public class User {
   private DateTime RegisterDate;
   
   
+  	public void inserToDataBase()
+  	{
+  		//TODO create insert action to database
+  	}
+  	
+  	public boolean isLogin(String idUser, String password)
+  	{
+  		//TODO validation of login
+  		return true;
+  	}
+  	
 	public int getIdUser() {
 		return IdUser;
 	}
