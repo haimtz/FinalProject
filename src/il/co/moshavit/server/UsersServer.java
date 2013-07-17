@@ -3,6 +3,7 @@ package il.co.moshavit.server;
 
 import il.co.moshavit.model.User;
 
+import javax.servlet.annotation.HttpMethodConstraint;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 

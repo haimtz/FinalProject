@@ -11,12 +11,10 @@ public class DBtester {
 	public static void main(String[] args) throws Exception {
 		
 		DataBase db = new DataBase();
-		int txId = 0;
 		
 		db.query("call insert_table(?,?)");
 		db.addParamString(1, "BEntzi___");
 		db.addParamString(2, "KOKO_3A_+");
-		
 		
 		db.create();
 		
