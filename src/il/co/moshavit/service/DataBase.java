@@ -7,6 +7,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +16,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.joda.time.DateTime;
 import org.xml.sax.SAXException;
 
+import com.mysql.jdbc.CallableStatement;
 import com.mysql.jdbc.ResultSet;
 
 public class DataBase {
@@ -27,7 +29,6 @@ public class DataBase {
 	
 	private Statement statement = null;
 	private PreparedStatement preper = null;
-	
 	
 	public DataBase() throws Exception
 	{
@@ -66,7 +67,7 @@ public class DataBase {
 	
 	public void create() throws SQLException
 	{
-		preper.executeUpdate();
+		preper.execute();
 	}
 	
 	public ResultSet resultQuery() throws SQLException
