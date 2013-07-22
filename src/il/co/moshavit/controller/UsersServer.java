@@ -1,4 +1,4 @@
-package il.co.moshavit.server;
+package il.co.moshavit.controller;
 
 
 import il.co.moshavit.model.User;
@@ -11,17 +11,10 @@ import javax.ws.rs.core.MediaType;
 public class UsersServer {
 	
 	@GET
-	@Path("/{id}")
+	@Path("/add")
 	@Produces(MediaType.APPLICATION_JSON)
-	public User getUser(@PathParam("id")int id)
+	public void getUser(User user)
 	{
-		User user = new User();
-		user.setUserName("Haim");
-		user.setFamily("user family");
-		user.setIdUser(id);
-		user.setEmail("email@host.com");
-		
-		return user;
 		
 	}
 

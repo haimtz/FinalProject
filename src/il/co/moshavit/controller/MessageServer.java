@@ -1,4 +1,4 @@
-package il.co.moshavit.server;
+package il.co.moshavit.controller;
 
 
 public class MessageServer {

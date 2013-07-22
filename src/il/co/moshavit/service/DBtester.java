@@ -10,15 +10,7 @@ public class DBtester {
 	 */
 	public static void main(String[] args) throws Exception {
 		
-		DataBase db = new DataBase();
-		
-		db.query("call insert_table(?,?)");
-		db.addParamString(1, "BEntzi___");
-		db.addParamString(2, "KOKO_3A_+");
-		
-		db.create();
-		
-		
+	
 		DataBase db_2 = new DataBase();
 		ResultSet result;
 		
@@ -27,7 +19,7 @@ public class DBtester {
 		
 		while(result.next())
 		{
-			System.out.println(result.getString("counterUser"));
+			System.out.println(result.getString("idUser") + " " + result.getString("username"));
 		}
 		
 	}
