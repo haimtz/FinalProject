@@ -60,12 +60,17 @@ public class DataBase {
 		preper.setInt(index, value);
 	}
 	
+	public void addParamBoolean(int index, boolean value) throws SQLException
+	{
+		preper.setBoolean(index, value);
+	}
+	
 	public void addParamDate(int index, DateTime value) throws SQLException
 	{
 		preper.setDate(index, new Date(value.toDate().getTime()));
 	}
 	
-	public void create() throws SQLException
+	public void execute() throws SQLException
 	{
 		preper.execute();
 	}
