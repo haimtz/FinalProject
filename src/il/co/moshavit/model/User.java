@@ -23,6 +23,7 @@ public class User {
   
   	public void inserToDataBase() throws Exception
   	{
+  		//TODO Sync the add user
   		DataBase db = new DataBase("db_moshvit");
   		db.StoredProcdure("call add_user(?,?,?,?,?,?,?,?,?,?)");
   		
