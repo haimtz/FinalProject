@@ -26,17 +26,18 @@ public class DataBase {
 	private final String DATABASE_URL;
 	private final String USERNAME;
 	private final String PASSWORD;
+	private final String DATABASE_NAME;
 	
-	private Statement statement = null;
-	private PreparedStatement preper = null;
+	private PreparedStatement preper;
 	
-	public DataBase() throws Exception
+	public DataBase(String database) throws Exception
 	{
 		// database settings
-		JDBC_DRIVER = Settings.getData("driver");
-		DATABASE_URL = Settings.getData("url");
-		USERNAME =  Settings.getData("username");
-		PASSWORD = Settings.getData("password");		
+		DATABASE_NAME = database;
+		JDBC_DRIVER = "com.mysql.jdbc.Driver";
+		DATABASE_URL = "jdbc:mysql://localhost:3306/" + DATABASE_NAME;
+		USERNAME =  "root";
+		PASSWORD = "1234";		
 		
 		// Register JDBC driver
 		Class.forName(JDBC_DRIVER);
@@ -45,7 +46,7 @@ public class DataBase {
 		connection = DriverManager.getConnection(DATABASE_URL,USERNAME,PASSWORD);
 	}
 	
-	public void query(String sql) throws SQLException
+	public void StoredProcdure(String sql) throws SQLException
 	{
 		preper = connection.prepareStatement(sql);
 	}
@@ -81,6 +82,11 @@ public class DataBase {
 		result = (ResultSet) preper.executeQuery();
 		
 		return result;
+	}
+	
+	public void close() throws SQLException
+	{
+		preper.close();
 	}
 
 }

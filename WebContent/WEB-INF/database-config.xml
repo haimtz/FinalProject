@@ -2,7 +2,7 @@
 <mySqldata>
 	<dataSetting>
 		<driver>com.mysql.jdbc.Driver</driver>
-		<url>jdbc:mysql://localhost:3306/temp_db</url>
+		<url>jdbc:mysql://localhost:3306/db_moshvit</url>
 		<username>root</username>
 		<password>1234</password>
 	</dataSetting>

@@ -1,5 +1,7 @@
 package il.co.moshavit.model;
 
+import il.co.moshavit.service.DataBase;
+
 import javax.xml.bind.annotation.XmlRootElement;
 
 import org.joda.time.DateTime;
@@ -7,6 +9,7 @@ import org.joda.time.DateTime;
 @XmlRootElement
 public class User {
   private int IdUser;
+  private String identityCard;
   private String firstName;
   private String lastName;
   private String Email;
@@ -18,9 +21,26 @@ public class User {
   private boolean isMember;
   
   
-  	public void inserToDataBase()
+  	public void inserToDataBase() throws Exception
   	{
-  		//TODO create insert action to database
+  		DataBase db = new DataBase("db_moshvit");
+  		db.StoredProcdure("call add_user(?,?,?,?,?,?,?,?,?,?)");
+  		
+  		db.addParamString(1, this.identityCard);
+  		db.addParamString(2, this.firstName);
+  		db.addParamString(3, this.lastName);
+  		db.addParamString(4, this.Email);
+  		db.addParamString(5, this.Phone);
+  		db.addParamString(6, this.Password);
+  		
+  		db.addParamDate(7, this.RegisterDate);
+  		db.addParamDate(8, this.dateOfBirth);
+  		
+  		db.addParamBoolean(9, this.isMember);
+  		db.addParamBoolean(10, this.isActive);
+  		
+  		db.execute();
+  		
   	}
   	
   	public boolean isLogin(String idUser, String password)
@@ -81,16 +101,16 @@ public class User {
 		return RegisterDate;
 	}
 
-	public void setRegisterDate(DateTime registerDate) {
-		RegisterDate = registerDate;
+	public void setRegisterDate() {
+		RegisterDate = new DateTime().now();
 	}
 
 	public DateTime getDateOfBirth() {
 		return dateOfBirth;
 	}
 
-	public void setDateOfBirth(DateTime dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
+	public void setDateOfBirth() {
+		this.dateOfBirth = new DateTime().now();
 	}
 
 	public boolean isActive() {
@@ -108,5 +128,12 @@ public class User {
 	public void setMember(boolean isMember) {
 		this.isMember = isMember;
 	}
-  	
+
+	public String getIdentityCard() {
+		return identityCard;
+	}
+
+	public void setIdentityCard(String identityCard) {
+		this.identityCard = identityCard;
+	}  	
 }
