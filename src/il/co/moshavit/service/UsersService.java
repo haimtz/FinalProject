@@ -2,6 +2,7 @@ package il.co.moshavit.service;
 
 
 import il.co.moshavit.model.User;
+import il.co.moshavit.modul.Settings;
 
 import javax.servlet.annotation.HttpMethodConstraint;
 import javax.ws.rs.*;
@@ -12,12 +13,16 @@ import javax.ws.rs.core.MediaType;
 @Consumes(MediaType.APPLICATION_JSON)
 public class UsersService {
 	
-	@POST
+	@GET
 	@Path("/add")
-	public User getUser(User user) throws Exception
-	{		
-		user.insertToDataBase();
-		
-		return user;
+	public void getUser()
+	{	
+		try{
+				String str = Settings.getData("driver");
+				System.out.println("OUTPUT: " + str);
+			}catch(Exception ex)
+			{
+				System.out.println(ex.getMessage());
+			}
 	}
 }

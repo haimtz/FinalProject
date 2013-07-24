@@ -7,8 +7,7 @@ import java.sql.ResultSet;
 public class DBtester {
 
 	/**
-	 * @param args
-	 * @throws Exception 
+	 * for tests only 
 	 */
 	public static void main(String[] args) throws Exception {
 		

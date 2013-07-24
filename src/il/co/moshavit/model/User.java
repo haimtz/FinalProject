@@ -20,40 +20,6 @@ public class User {
   private DateTime dateOfBirth;
   private boolean isActive;
   private boolean isMember;
-  
-  
-  	public void insertToDataBase() throws Exception
-  	{  	
-  		System.out.println("IN FUNC");
-  		
-  		DataBase db = new DataBase("db_moshvit");
-  		db.StoredProcdure("call add_user(?,?,?,?,?,?,?,?,?,?)");
-  		
-  		System.out.println("User Call params");
-  		
-  		db.addParamString(1, this.identityCard);
-  		db.addParamString(2, this.firstName);
-  		db.addParamString(3, this.lastName);
-  		db.addParamString(4, this.Email);
-  		db.addParamString(5, this.Phone);
-  		db.addParamString(6, this.Password);
-  		
-  		db.addParamDate(7, new DateTime().now());
-  		db.addParamDate(8, new DateTime().now());
-  		
-  		db.addParamBoolean(9, this.isMember);
-  		db.addParamBoolean(10, this.isActive);
-  		
-  		db.execute();
-  		
-  		
-  	}
-  	
-  	public boolean isLogin(String idUser, String password)
-  	{
-  		//TODO validation of login
-  		return true;
-  	}
 
 	public int getIdUser() {
 		return IdUser;
