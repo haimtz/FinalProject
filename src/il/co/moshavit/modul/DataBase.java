@@ -1,4 +1,4 @@
-package il.co.moshavit.service;
+package il.co.moshavit.modul;
 
 import java.io.IOException;
 import java.sql.Connection;

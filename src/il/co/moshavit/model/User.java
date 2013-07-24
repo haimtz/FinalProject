@@ -1,6 +1,6 @@
 package il.co.moshavit.model;
 
-import il.co.moshavit.service.DataBase;
+import il.co.moshavit.modul.DataBase;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -8,6 +8,7 @@ import org.joda.time.DateTime;
 
 @XmlRootElement
 public class User {
+	
   private int IdUser;
   private String identityCard;
   private String firstName;
@@ -21,10 +22,14 @@ public class User {
   private boolean isMember;
   
   
-  	public void inserToDataBase() throws Exception
-  	{
+  	public void insertToDataBase() throws Exception
+  	{  	
+  		System.out.println("IN FUNC");
+  		
   		DataBase db = new DataBase("db_moshvit");
   		db.StoredProcdure("call add_user(?,?,?,?,?,?,?,?,?,?)");
+  		
+  		System.out.println("User Call params");
   		
   		db.addParamString(1, this.identityCard);
   		db.addParamString(2, this.firstName);
@@ -33,13 +38,14 @@ public class User {
   		db.addParamString(5, this.Phone);
   		db.addParamString(6, this.Password);
   		
-  		db.addParamDate(7, this.RegisterDate);
-  		db.addParamDate(8, this.dateOfBirth);
+  		db.addParamDate(7, new DateTime().now());
+  		db.addParamDate(8, new DateTime().now());
   		
   		db.addParamBoolean(9, this.isMember);
   		db.addParamBoolean(10, this.isActive);
   		
   		db.execute();
+  		
   		
   	}
   	
