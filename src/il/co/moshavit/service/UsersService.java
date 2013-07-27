@@ -15,14 +15,13 @@ public class UsersService {
 	
 	@GET
 	@Path("/add")
-	public void getUser()
+	public User getUser()
 	{	
-		try{
-				String str = Settings.getData("driver");
-				System.out.println("OUTPUT: " + str);
-			}catch(Exception ex)
-			{
-				System.out.println(ex.getMessage());
-			}
+		User user = new User();
+		
+		user.setFirstName("haim");
+		user.setLastName("no-ip");
+		
+		return user;
 	}
 }
