@@ -3,6 +3,7 @@ package il.co.moshavit.service;
 
 import il.co.moshavit.model.User;
 import il.co.moshavit.modul.Settings;
+import il.co.moshavit.repository.UserRepository;
 
 import javax.servlet.annotation.HttpMethodConstraint;
 import javax.ws.rs.*;
@@ -13,15 +14,10 @@ import javax.ws.rs.core.MediaType;
 @Consumes(MediaType.APPLICATION_JSON)
 public class UsersService {
 	
-	@GET
+	@POST
 	@Path("/add")
-	public User getUser()
+	public User getUser() throws Exception
 	{	
-		User user = new User();
 		
-		user.setFirstName("haim");
-		user.setLastName("no-ip");
-		
-		return user;
 	}
 }

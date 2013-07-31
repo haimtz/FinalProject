@@ -1,6 +1,6 @@
 package il.co.moshavit.model;
 
-import il.co.moshavit.modul.DataBase;
+import il.co.moshavit.repository.DataBase;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -20,6 +20,13 @@ public class User {
   private DateTime dateOfBirth;
   private boolean isActive;
   private boolean isMember;
+  
+  public User()
+  {
+//	  TODO for test only to delete aftter testing
+	  this.setRegisterDate();
+	  this.setDateOfBirth();
+  }
 
 	public int getIdUser() {
 		return IdUser;

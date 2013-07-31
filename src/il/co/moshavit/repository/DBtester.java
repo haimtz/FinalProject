@@ -1,4 +1,4 @@
-package il.co.moshavit.modul;
+package il.co.moshavit.repository;
 
 import il.co.moshavit.model.User;
 
