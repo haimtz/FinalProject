@@ -11,7 +11,7 @@ public class User {
 	
   private int IdUser;
   private String identityCard;
-  private String firstName;
+  private String privateName;
   private String lastName;
   private String Email;
   private String Phone;
@@ -36,12 +36,12 @@ public class User {
 		IdUser = idUser;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public String getPrivatetName() {
+		return privateName;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setPrivatetName(String firstName) {
+		this.privateName = firstName;
 	}
 
 	public String getLastName() {
