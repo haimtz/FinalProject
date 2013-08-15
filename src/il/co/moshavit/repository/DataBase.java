@@ -1,22 +1,14 @@
 package il.co.moshavit.repository;
 
-import java.io.IOException;
+
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.Types;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.xml.parsers.ParserConfigurationException;
 
 import org.joda.time.DateTime;
-import org.xml.sax.SAXException;
 
-import com.mysql.jdbc.CallableStatement;
 import com.mysql.jdbc.ResultSet;
 
 public class DataBase {
