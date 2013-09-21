@@ -1,4 +1,4 @@
-package il.co.moshavit.service;
+package il.co.moshavit.controller;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import javax.ws.rs.core.MediaType;
 @Path("/user")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class UsersService {
+public class UsersController {
 	
 	@GET
 	public List<User>  getUser()
